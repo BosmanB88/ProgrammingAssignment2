@@ -1,6 +1,6 @@
-##------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------
 ##makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
-##------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------
 
 ## The function makeCacheMatrix creates a special "matrix", which is a list containing a function to
 #1. set the value of the matrix
@@ -33,12 +33,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-##------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------
 ##cacheSolve: Function
-##The following function calculates the inverse of the special "matrix" created with the makeCacheMatrix() function. 
-##First it checks to see if the inverse matrix has already been calculated. If so, it gets the inverse from the cache and skips the computation. 
-##Otherwise, it calculates the inverse of the data and sets the value of the inverse in the cache via the setInverse function.
-##------------------------------------------------------------------------------------------
+#The following function calculates the inverse of the special "matrix" created with the makeCacheMatrix() function. 
+#First it checks to see if the inverse matrix has already been calculated. If so, it gets the inverse from the cache and skips the computation. 
+#Otherwise, it calculates the inverse of the data and sets the value of the inverse in the cache via the setInverse function.
+#------------------------------------------------------------------------------------------
 
 cacheSolve <- function(x, ...) {
     #parameter x is type matrix with methods created by makeCacheMatrix
@@ -59,3 +59,22 @@ cacheSolve <- function(x, ...) {
     #return m
     m
 }
+
+#------------------------------------------------------------------------------------------
+##Sample Test
+# The test is commented out
+# to use the test Run the Functions Load functions makeCacheMatrix and cacheSolve  into your session
+# run line 74 without the comment # at the console to create dummy data
+# run line 76 without the comment # at the console to construct special matrix with methods
+# run line 78, 79 without the comment # at the console to test special matrix and cache function
+#------------------------------------------------------------------------------------------
+
+# Test
+# generate a random  matrix
+#test <- matrix(runif(9,1,10),3,3)
+# generate the makeCacheMatrix object with this matrix
+#testCached <- makeCacheMatrix(test)
+# from now on calculate or retrieve calculated inversion using the cacheSolve function
+#testInv <- cacheSolve(testCached)
+#testInv <- cacheSolve(testCached)
+
